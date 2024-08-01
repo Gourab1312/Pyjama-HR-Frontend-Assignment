@@ -1,0 +1,137 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+@media only screen and (min-width: 1024px) {
+  .note-form{
+    max-width: 600px;
+  }
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.note-form-input,
+.note-form-textarea,
+.note-form-file-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.note-form-input {
+  font-size: 16px;
+}
+
+.note-form-textarea {
+  resize: vertical;
+  font-size: 16px;
+}
+
+.note-form-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.note-form-button:hover {
+  background-color: #0056b3;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.note {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.note-title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.note-content {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.note-image {
+  max-width: 100%;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.note-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.note-action-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.note-action-button:hover {
+  background-color: #0056b3;
+}
+
+.primary-heading{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.note-color-picker {
+  cursor: pointer;
+  border: none;
+  background: none;
+  height: 35px;
+  width: 35px;
+}
+
+.pinned-notes,
+.unpinned-notes {
+  margin-bottom: 20px;
+}
+
+.pinned-notes h2,
+.unpinned-notes h2 {
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.color-input-container{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+}
