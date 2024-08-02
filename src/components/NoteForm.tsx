@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { addNote } from "../store/noteSlice";
 import { v4 as uuidv4 } from "uuid";
@@ -7,8 +7,9 @@ const NoteForm: React.FC = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState<string | null>(null);
-  const [color, setColor] = useState("#ffffff"); // New state for color
+  const [color, setColor] = useState("#ffffff"); 
   const dispatch = useDispatch();
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -36,7 +37,9 @@ const NoteForm: React.FC = () => {
       );
       setTitle("");
       setContent("");
-      setImage(null);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = ""; // Clear the file input
+      }
       setColor("#ffffff"); // Reset color
     }
   };
@@ -61,6 +64,7 @@ const NoteForm: React.FC = () => {
         accept="image/*"
         onChange={handleFileChange}
         className="note-form-file-input"
+        ref={fileInputRef}
       />
       <div className="color-input-container">
         <p>Note Color : </p>
